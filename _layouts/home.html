@@ -3,20 +3,12 @@ layout: archive
 ---
 
 {{ content }}
+<style>
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+  p {font-size: 18px;}
+</style>
 
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
+<h2 class="archive__subtitle">Hi, I'm Nino Fijačko</h3>
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% for post in posts %}
-    {% include archive-single.html type=entries_layout %}
-  {% endfor %}
-</div>
-
-{% include paginator.html %}
+<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est adipisci velit dolores asperiores temporibus. Cum, eum ipsa, dolore libero, quae repudiandae delectus rem voluptatum illum totam cupiditate sequi laudantium! Maiores? </p>
+<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est adipisci velit dolores asperiores temporibus. Cum, eum ipsa, dolore libero, quae repudiandae delectus rem voluptatum illum totam cupiditate sequi laudantium! Maiores? Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sint architecto sit debitis molestiae culpa sapiente unde commodi molestias ut asperiores voluptatum amet iusto, pariatur doloremque sequi explicabo optio iste. </p>
