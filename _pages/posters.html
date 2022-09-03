@@ -1,0 +1,26 @@
+---
+layout: posts
+title: Posters
+permalink: /posters/
+author_profile: true
+---
+
+<style>
+.posteritem img{
+  max-width: 150%;
+}
+
+</style>
+
+{% assign postsByYear = site.posters | where_exp: "item", "item.hidden != true" | group_by_exp: 'post', 'post.date | date: "%Y"' | reverse %}
+{% for year in postsByYear %}
+  <section id="{{ year.name }}" class="taxonomy__section">
+    <h2 class="archive__subtitle">{{ year.name }}</h2>
+    <div class="posteritem">
+      {% for post in year.items %}
+      <img src="/assets/images/{{post.imgname}}" alt="Mountain">
+      {% endfor %}
+    </div>
+  </section>
+{% endfor %}
+

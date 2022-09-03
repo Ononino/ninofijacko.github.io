@@ -1,11 +1,11 @@
 # main links
 main:
   - title: "Publications"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+    url: /publications/
   - title: "Posters"
-    url: /year-archive/
+    url: /posters/
   - title: "Projects"
-    url: /collection-archive/
+    url: /projects/
   - title: "Blog"
     url: /year-archive/
   # - title: "Sitemap"
