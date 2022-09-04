@@ -26,12 +26,20 @@ author_profile: true
 </style>
 
 
-{% assign publications = site.publications | sort: "year" | reverse %}
-{% for pub in publications %}
-<div class="pubitem">
-  <div class="pubtitle">{{ pub.title }}</div>
-  <div class="pubauthors">{{ pub.authors }}</div>
-  <div class="pubinfo">{{ pub.publication }}, {{ pub.year}}</div>
-  <a href="{{pub.link}}"><i class="fas fa-link"></i> Full paper</a>
-</div>
+
+{% assign postsByYear = site.publications | where_exp: "item", "item.hidden != true" | group_by_exp: 'post', 'post.date | date: "%Y"' | reverse %}
+{% for year in postsByYear %}
+  <section id="{{ year.name }}" class="taxonomy__section">
+    <h2 class="archive__subtitle">{{ year.name }}</h2>
+    <div class="posteritem">
+      {% for post in year.items %}
+      <div class="pubitem">
+        <div class="pubtitle">{{ post.title }}</div>
+        <div class="pubauthors">{{ post.authors }}</div>
+        <div class="pubinfo">{{ post.publication }}, {{ post.year}}</div>
+        <a href="{{pub.link}}"><i class="fas fa-link"></i> Full paper</a>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
 {% endfor %}
