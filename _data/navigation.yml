@@ -6,7 +6,5 @@ main:
     url: /posters/
   - title: "Projects"
     url: /projects/
-  - title: "Blog"
-    url: /year-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
